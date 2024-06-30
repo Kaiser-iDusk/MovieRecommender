@@ -16,6 +16,7 @@ similarity=pickle.load(open('similarity.pkl','rb'))
 def fetch_poster(movie_id):
     response=requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=English')
     data=response.json()
+    print(data)
     return "http://image.tmdb.org/t/p/w500/"+data['poster_path']
 
 def recommend(movie):
